@@ -1,4 +1,11 @@
 *.sdf
 *.user
 *.opensdf
-Release
+*.suo
+*.db
+*.opendb
+Release/
+Debug/
+.vs/
+vcpkg/
+
