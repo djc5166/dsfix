@@ -1,0 +1,22 @@
+{
+	"$schema": "https://raw.githubusercontent.com/microsoft/vcpkg-tool/main/docs/vcpkg.schema.json",
+	"builtin-baseline": "6af584dd59aa5bdba75dae6781ec74614e03e5b9",
+	"name": "dsfix",
+	"version": "1.0",
+	"dependencies": [
+		"directxsdk",
+		"detours"
+	],
+	"overrides": [
+		{
+			"name": "directxsdk",
+			"version": "jun10",
+			"port-version": 8
+		},
+		{
+			"name": "detours",
+			"version": "4.0.1",
+			"port-version": 8
+		}
+	]
+}
