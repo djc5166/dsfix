@@ -21,7 +21,7 @@
 #include "FPS.h"
 
 // globals
-tDirect3DCreate9 oDirect3DCreate9 = Direct3DCreate9;
+tDirect3DCreate9 oDirect3DCreate9 = nullptr;
 tDirectInput8Create oDirectInput8Create;
 std::ofstream ofile;	
 char dlldir[320];

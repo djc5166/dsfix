@@ -61,6 +61,7 @@
     <ClCompile Include="WindowManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="d3d9query.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AreaTex.h">
@@ -136,12 +137,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Textures.def" />
+    <ClInclude Include="d3d9query.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Actions.def" />
     <None Include="dinput8.def" />
     <None Include="Keys.def" />
     <None Include="Settings.def" />
+    <None Include="vcpkg-configuration.json" />
+    <None Include="vcpkg.json" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Source Files">
