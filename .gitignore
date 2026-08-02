@@ -1,10 +1,10 @@
-*.sdf
-*.user
+*.db
+*.filters
+*.opendb
 *.opensdf
+*.sdf
 *.suo
-Release
+*.user
+.vs/
 Debug/
 Release/
-.vs/
-*.VC.VC.opendb
-*.VC.db
