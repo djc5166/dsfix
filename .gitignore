@@ -1,4 +1,10 @@
-*.sdf
-*.user
+*.db
+*.filters
+*.opendb
 *.opensdf
-Release
+*.sdf
+*.suo
+*.user
+.vs/
+Debug/
+Release/

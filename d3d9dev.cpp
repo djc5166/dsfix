@@ -186,7 +186,12 @@ HRESULT APIENTRY hkIDirect3DDevice9::CreatePixelShader(CONST DWORD* pFunction,ID
 }
 
 HRESULT APIENTRY hkIDirect3DDevice9::CreateQuery(D3DQUERYTYPE Type,IDirect3DQuery9** ppQuery) {
-	return m_pD3Ddev->CreateQuery(Type, ppQuery);
+	auto result = m_pD3Ddev->CreateQuery(Type, ppQuery);
+	if (Type == D3DQUERYTYPE_OCCLUSION && result == D3D_OK) {
+		new hkIDirect3DQuery9(ppQuery);
+		// These instances will leak, but there are only a set number of them created
+	}
+	return result;
 }
 
 HRESULT APIENTRY hkIDirect3DDevice9::CreateRenderTarget(UINT Width, UINT Height, D3DFORMAT Format, D3DMULTISAMPLE_TYPE MultiSample, DWORD MultisampleQuality, BOOL Lockable, IDirect3DSurface9** ppSurface, HANDLE* pSharedHandle) {
@@ -579,7 +584,7 @@ HRESULT APIENTRY hkIDirect3DDevice9::SetPixelShaderConstantF(UINT StartRegister,
 
 			UINT width;
 			UINT height;
-			getDofRes(HALF_X_RESOLUTION, HALF_Y_RESOLUTION, width, height);
+			getDofRes(static_cast<UINT>(HALF_X_RESOLUTION), static_cast<UINT>(HALF_Y_RESOLUTION), width, height);
 			pBuffer[offset] = static_cast<float>(width);
 			pBuffer[offset + 1] = static_cast<float>(height);
 			pBuffer[offset + 2] = 1.f / width;
